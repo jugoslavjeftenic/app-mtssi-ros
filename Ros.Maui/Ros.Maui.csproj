@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>Ros.Maui</ApplicationTitle>
+		<ApplicationTitle>Registar osnovnih sredstava</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>rs.mts-si.ros.maui</ApplicationId>
