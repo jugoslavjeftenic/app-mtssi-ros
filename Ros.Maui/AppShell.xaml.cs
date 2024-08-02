@@ -1,10 +1,9 @@
-﻿namespace Ros.Maui
+﻿namespace Ros.Maui;
+
+public partial class AppShell : Shell
 {
-	public partial class AppShell : Shell
+	public AppShell()
 	{
-		public AppShell()
-		{
-			InitializeComponent();
-		}
+		InitializeComponent();
 	}
 }
