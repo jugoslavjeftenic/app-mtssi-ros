@@ -22,7 +22,7 @@ public static class MauiProgram
 #endif
 
 		// Repository
-		builder.Services.AddSingleton<IAssetsRepository, AssetsInMemoryRepository>();
+		builder.Services.AddSingleton<IAssetRepository, AssetInMemoryRepository>();
 
 		// ViewModels
 		builder.Services.AddSingleton<MainPage>();

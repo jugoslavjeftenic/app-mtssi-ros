@@ -2,7 +2,7 @@
 
 namespace Ros.Maui.Repositories;
 
-public interface IAssetsRepository
+public interface IAssetRepository
 {
     Task<List<Asset>> GetAssetsAsync(string filter);
 }
