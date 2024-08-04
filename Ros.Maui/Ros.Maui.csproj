@@ -64,14 +64,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Ros.CoreBusiness\Ros.CoreBusiness.csproj" />
-		<ProjectReference Include="..\Ros.UseCases\Ros.UseCases.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<MauiXaml Update="View\MainPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Interfaces\" />
 	</ItemGroup>
 
 </Project>

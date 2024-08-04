@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using Ros.Maui.Interfaces;
-using Ros.Maui.Services;
+using Ros.Maui.Repositories;
 using Ros.Maui.View;
 
 namespace Ros.Maui;
