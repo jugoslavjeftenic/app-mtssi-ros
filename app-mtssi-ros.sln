@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ros.CoreBusiness", "Ros.CoreBusiness\Ros.CoreBusiness.csproj", "{73679322-70D1-4FFC-9AC9-CFE0BCAE7066}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ros.CoreBusiness", "Ros.CoreBusiness\Ros.CoreBusiness.csproj", "{73679322-70D1-4FFC-9AC9-CFE0BCAE7066}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ros.Maui", "Ros.Maui\Ros.Maui.csproj", "{062DFB84-3FB7-4C72-9D42-876856F23383}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ros.Maui", "Ros.Maui\Ros.Maui.csproj", "{062DFB84-3FB7-4C72-9D42-876856F23383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ros.UseCases", "Ros.UseCases\Ros.UseCases.csproj", "{FF996450-47F2-4988-BCF5-664C88B7E801}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ros.UseCases", "Ros.UseCases\Ros.UseCases.csproj", "{FF996450-47F2-4988-BCF5-664C88B7E801}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ros.DataStore.InMemory", "Ros.DataStore.InMemory\Ros.DataStore.InMemory.csproj", "{E0C58308-EF6B-46B2-B908-8E8A4D99188B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{FF996450-47F2-4988-BCF5-664C88B7E801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF996450-47F2-4988-BCF5-664C88B7E801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF996450-47F2-4988-BCF5-664C88B7E801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0C58308-EF6B-46B2-B908-8E8A4D99188B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0C58308-EF6B-46B2-B908-8E8A4D99188B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0C58308-EF6B-46B2-B908-8E8A4D99188B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0C58308-EF6B-46B2-B908-8E8A4D99188B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
