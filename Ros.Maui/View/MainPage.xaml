@@ -7,44 +7,44 @@
 
     <CollectionView>
         <CollectionView.ItemsSource>
-            <x:Array Type="{x:Type model:Sredstvo}">
-                <model:Sredstvo
+            <x:Array Type="{x:Type model:Asset}">
+                <model:Asset
                     Id="1"
-                    SerijskiBroj="XY123"
-                    Naziv="Racunar"
-                    NadredjenoSredstvo="10001"
-                    SAPInventarniBroj="20000001"/>
-                <model:Sredstvo
+                    SerialNumber="XY123"
+                    Name="Racunar"
+                    ParentAsset="10001"
+                    SAPInventoryNumber="20000001"/>
+                <model:Asset
                     Id="2"
-                    SerijskiBroj="AB123"
-                    Naziv="Racunar neki drugi"
-                    NadredjenoSredstvo="10002"
-                    SAPInventarniBroj="20000002"/>
-                <model:Sredstvo
+                    SerialNumber="AB123"
+                    Name="Racunar neki drugi"
+                    ParentAsset="10002"
+                    SAPInventoryNumber="20000002"/>
+                <model:Asset
                     Id="3"
-                    SerijskiBroj="XY123AB"
-                    Naziv="Lapatop"
-                    NadredjenoSredstvo="10003"
-                    SAPInventarniBroj="20000003"/>
-                <model:Sredstvo
+                    SerialNumber="XY123AB"
+                    Name="Lapatop"
+                    ParentAsset="10003"
+                    SAPInventoryNumber="20000003"/>
+                <model:Asset
                     Id="4"
-                    SerijskiBroj="123XAB"
-                    Naziv="Desktop"
-                    NadredjenoSredstvo="10004"
-                    SAPInventarniBroj="20000004"/>
+                    SerialNumber="123XAB"
+                    Name="Desktop"
+                    ParentAsset="10004"
+                    SAPInventoryNumber="20000004"/>
             </x:Array>
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:Sredstvo">
+            <DataTemplate x:DataType="model:Asset">
                 <VerticalStackLayout
                     Padding="10"
                     Spacing="4">
-                    <Label Text="{Binding Naziv}" FontSize="24"/>
+                    <Label Text="{Binding Name}" FontSize="24"/>
                     <Label FontSize="12">
                         <Label.Text>
                             <MultiBinding StringFormat="{}{0} | {1}">
-                                <Binding Path="SerijskiBroj"/>
-                                <Binding Path="SAPInventarniBroj"/>
+                                <Binding Path="SerialNumber"/>
+                                <Binding Path="SAPInventoryNumber"/>
                             </MultiBinding>
                         </Label.Text>
                     </Label>
