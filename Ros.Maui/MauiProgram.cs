@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using Ros.Maui.Interfaces;
+using Ros.Maui.Services;
 using Ros.Maui.View;
 
 namespace Ros.Maui;
@@ -20,6 +22,10 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
+		// Repository
+		builder.Services.AddSingleton<IAssetsRepository, AssetsInMemoryRepository>();
+
+		// ViewModels
 		builder.Services.AddSingleton<MainPage>();
 
 		return builder.Build();
