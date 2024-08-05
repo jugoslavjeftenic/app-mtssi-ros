@@ -7,9 +7,47 @@
     Shell.FlyoutBehavior="Disabled"
     Title="ROS">
 
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Element" x:Key="BaseStyle">
+                <Setter
+                    Property="Shell.BackgroundColor"
+                    Value="{StaticResource Primary}"/>
+                <Setter
+                    Property="Shell.ForegroundColor"
+                    Value="{OnPlatform WinUI={StaticResource Primary}, Default=White}"/>
+                <Setter
+                    Property="Shell.TitleColor"
+                    Value="White"/>
+                <Setter
+                    Property="Shell.DisabledColor"
+                    Value="#B4FFFFFF"/>
+                <Setter
+                    Property="Shell.UnselectedColor"
+                    Value="{AppThemeBinding Dark=#95FFFFFF, Light=#95000000}"/>
+                <Setter
+                    Property="Shell.TabBarBackgroundColor"
+                    Value="{AppThemeBinding Dark={StaticResource DarkBackground}, Light={StaticResource LightBackground}}"/>
+                <Setter
+                    Property="Shell.TabBarForegroundColor"
+                    Value="{AppThemeBinding Dark={StaticResource LightBackground}, Light={StaticResource DarkBackground}}"/>
+                <Setter
+                    Property="Shell.TabBarUnselectedColor"
+                    Value="{AppThemeBinding Dark=#95FFFFFF, Light=#95000000}"/>
+                <Setter
+                    Property="Shell.TabBarTitleColor"
+                    Value="{AppThemeBinding Dark={StaticResource LightBackground}, Light={StaticResource DarkBackground}}"/>
+            </Style>
+
+            <Style
+                TargetType="ShellItem"
+                BasedOn="{StaticResource BaseStyle}"
+                ApplyToDerivedTypes="True" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
     <ShellContent
         Title="ROS"
         ContentTemplate="{DataTemplate view:MainPage}"
         Route="MainPage" />
-
 </Shell>
