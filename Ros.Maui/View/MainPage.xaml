@@ -7,7 +7,64 @@
              x:Class="Ros.Maui.View.MainPage"
              Title="{Binding Title}">
 
-    <CollectionView>
+    <Grid
+        ColumnDefinitions="*"
+        RowDefinitions="*,Auto"
+        Padding="5">
+
+        <CollectionView
+            Grid.Column="0"
+            Grid.Row="0"
+            ItemsSource="{Binding Assets}"
+            SelectionMode="None">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Asset">
+                    <Grid Padding="10">
+                        <Frame
+                            HeightRequest="125"
+                            Style="{StaticResource CardView}">
+                            <VerticalStackLayout
+                                Padding="10"
+                                Spacing="4">
+                                <Label
+                                    Text="{Binding Name}"
+                                    Style="{StaticResource LargeLabel}"/>
+                                <Label
+                                    Style="{StaticResource MediumLabel}"
+                                    FontSize="12">
+                                    <Label.Text>
+                                        <MultiBinding StringFormat="{}{0} | {1}">
+                                            <Binding Path="SerialNumber"/>
+                                            <Binding Path="SAPInventoryNumber"/>
+                                        </MultiBinding>
+                                    </Label.Text>
+                                </Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button
+            Grid.Column="0"
+            Grid.Row="1"
+            Margin="8"
+            Text="Search ..."
+            Command="{Binding GetAssetsCommand}"
+            IsEnabled="{Binding IsNotBusy}"
+            Style="{StaticResource ButtonOutline}"/>
+
+        <ActivityIndicator
+            IsVisible="{Binding IsBusy}"
+            IsRunning="{Binding IsBusy}"
+            VerticalOptions="Center"
+            HorizontalOptions="FillAndExpand"
+            Grid.RowSpan="2"/>
+    </Grid>
+
+    <!--<CollectionView>
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type model:Asset}">
                 <model:Asset
@@ -53,5 +110,5 @@
                 </VerticalStackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
-    </CollectionView>
+    </CollectionView>-->
 </ContentPage>
