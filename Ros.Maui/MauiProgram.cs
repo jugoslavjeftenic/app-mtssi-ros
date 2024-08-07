@@ -27,9 +27,11 @@ public static class MauiProgram
 
 		// ViewModel
 		builder.Services.AddSingleton<AssetsViewModel>();
+		builder.Services.AddTransient<AssetDetailsViewModel>();
 
 		// View
 		builder.Services.AddSingleton<MainPage>();
+		builder.Services.AddTransient<DetailsPage>();
 
 		return builder.Build();
 	}

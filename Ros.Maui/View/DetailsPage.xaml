@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Ros.Maui.ViewModel"
+             x:DataType="viewmodel:AssetDetailsViewModel"
+             x:Class="Ros.Maui.View.DetailsPage"
+             Title="{Binding Asset.Name}">
+    <Label 
+            Text="{Binding Asset.Name}"
+            FontSize="24"
+            />
+</ContentPage>

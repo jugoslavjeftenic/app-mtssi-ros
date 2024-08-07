@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using Ros.Maui.Models;
 using Ros.Maui.Repositories;
+using Ros.Maui.View;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
@@ -16,6 +17,20 @@ public partial class AssetsViewModel : BaseViewModel
 	{
 		Title = "Registar osnovnih sredstava";
 		_assetRepository = assetRepository;
+	}
+
+	[RelayCommand]
+	public async Task GoToDetailsAsync(Asset asset)
+	{
+		if (asset is null) return;
+
+		await Shell
+			.Current
+			.GoToAsync($"{nameof(DetailsPage)}", true,
+				new Dictionary<string, object>()
+				{
+					{"Asset", asset }
+				});
 	}
 
 	[RelayCommand]
