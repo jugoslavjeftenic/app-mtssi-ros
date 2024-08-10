@@ -87,26 +87,22 @@ public class AssetInMemoryRepository : IAssetRepository
 		}
 	];
 
-	public async Task<List<Asset>> GetAssetsAsync(string filter = "")
+	public async Task<List<Asset>> GetAssetsAsync(string filter)
 	{
-		if (string.IsNullOrWhiteSpace(filter))
+		var assets = _assets.AsEnumerable();
+
+		if (string.IsNullOrWhiteSpace(filter) is false)
 		{
-			return await Task.FromResult(_assets);
+			assets = assets.Where(x =>
+				(x.SerialNumber?.Contains(filter, StringComparison.OrdinalIgnoreCase) ?? false) ||
+				(x.Name?.Contains(filter, StringComparison.OrdinalIgnoreCase) ?? false) ||
+				(x.ParentAsset?.Contains(filter, StringComparison.OrdinalIgnoreCase) ?? false) ||
+				(x.SAPInventoryNumber?.Contains(filter, StringComparison.OrdinalIgnoreCase) ?? false)
+			);
 		}
 
-		var assets = _assets
-			.Where(x =>
-				(x.SerialNumber?
-					.Contains(filter, StringComparison.OrdinalIgnoreCase) ?? false) ||
-				(x.Name?
-					.Contains(filter, StringComparison.OrdinalIgnoreCase) ?? false) ||
-				(x.ParentAsset?
-					.Contains(filter, StringComparison.OrdinalIgnoreCase) ?? false) ||
-				(x.SAPInventoryNumber?
-					.Contains(filter, StringComparison.OrdinalIgnoreCase) ?? false)
-			)
-			.ToList();
+		var limitedAssets = assets.Take(5).ToList();
 
-		return await Task.FromResult(assets);
+		return await Task.FromResult(limitedAssets);
 	}
 }
