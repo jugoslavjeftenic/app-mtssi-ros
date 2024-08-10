@@ -6,24 +6,76 @@
              x:Class="Ros.Maui.View.DetailsPage"
              Title="{Binding Asset.Name}">
     <ScrollView>
-        <VerticalStackLayout
-            Padding="12">
+        <Grid
+            Padding="12"
+            ColumnDefinitions="Auto, *"
+            ColumnSpacing="10"
+            RowDefinitions="Auto,Auto,Auto,Auto"
+            RowSpacing="10">
+
+            <!-- Serijski broj -->
             <Label
-                Text="{Binding Asset.SerialNumber, StringFormat='Serijski broj: {0}'}"
+                Grid.Column="0"
+                Grid.Row="0"
+                Text="Serijski broj:"
+                HorizontalOptions="End"
                 TextColor="Black"
                 Style="{StaticResource MediumLabel}"/>
             <Label
-                Text="{Binding Asset.Name, StringFormat='Naziv sredstva: {0}'}"
+                Grid.Column="1"
+                Grid.Row="0"
+                Text="{Binding Asset.SerialNumber}"
+                HorizontalOptions="Start"
+                TextColor="Black"
+                Style="{StaticResource MediumLabel}"/>
+
+            <!-- Naziv sredstva -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="1"
+                Text="Naziv sredstva:"
+                HorizontalOptions="End"
                 TextColor="Black"
                 Style="{StaticResource MediumLabel}"/>
             <Label
-                Text="{Binding Asset.ParentAsset, StringFormat='Nadredjeno sredstvo: {0}'}"
+                Grid.Column="1"
+                Grid.Row="1"
+                Text="{Binding Asset.Name}"
+                HorizontalOptions="Start"
                 TextColor="Black"
-                Style="{StaticResource SmallLabel}"/>
+                Style="{StaticResource MediumLabel}"/>
+
+            <!-- Nadredjeno sredstvo -->
             <Label
-                Text="{Binding Asset.SAPInventoryNumber, StringFormat='Inventarski broj: {0}'}"
+                Grid.Column="0"
+                Grid.Row="2"
+                Text="Nadredjeno sredstvo:"
+                HorizontalOptions="End"
                 TextColor="Black"
-                Style="{StaticResource SmallLabel}"/>
-        </VerticalStackLayout>
+                Style="{StaticResource MediumLabel}"/>
+            <Label
+                Grid.Column="1"
+                Grid.Row="2"
+                Text="{Binding Asset.ParentAsset}"
+                HorizontalOptions="Start"
+                TextColor="Black"
+                Style="{StaticResource MediumLabel}"/>
+
+            <!-- Inventarski broj -->
+            <Label
+                Grid.Column="0"
+                Grid.Row="3"
+                Text="Inventarski broj:"
+                HorizontalOptions="End"
+                TextColor="Black"
+                Style="{StaticResource MediumLabel}"/>
+            <Label
+                Grid.Column="1"
+                Grid.Row="3"
+                Text="{Binding Asset.SAPInventoryNumber}"
+                HorizontalOptions="Start"
+                TextColor="Black"
+                Style="{StaticResource MediumLabel}"/>
+        </Grid>
     </ScrollView>
 </ContentPage>
