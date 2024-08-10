@@ -34,7 +34,7 @@ public partial class AssetsViewModel : BaseViewModel
 	}
 
 	[RelayCommand]
-	public async Task GetAssetsAsync()
+	public async Task GetAssetsAsync(string searchQuery)
 	{
 		if (IsBusy) return;
 
@@ -43,10 +43,10 @@ public partial class AssetsViewModel : BaseViewModel
 			IsBusy = true;
 
 			// Fetch assets from repository ...
-			var assets = await _assetRepository.GetAssetsAsync();
+			var assets = await _assetRepository.GetAssetsAsync(searchQuery);
 
 			// ... and clear Assets observable collection if any.
-			if (assets.Count.Equals(0) is false) Assets.Clear();
+			if (assets.Count > 0) Assets.Clear();
 
 			// Populate Assets observable collection with fetched assets.
 			foreach (var asset in assets) Assets.Add(asset); // TODO: AddRange

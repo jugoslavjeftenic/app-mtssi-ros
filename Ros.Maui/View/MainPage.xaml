@@ -9,12 +9,17 @@
 
     <Grid
         ColumnDefinitions="*"
-        RowDefinitions="*,Auto"
-        Padding="5">
+        RowDefinitions="Auto,*"
+        Padding="5"
+        BackgroundColor="Silver">
+
+        <Entry
+            Placeholder="Unesi tekst za pretragu"
+            Margin="8"
+            Completed="OnSearchCompleted"/>
 
         <CollectionView
-            Grid.Column="0"
-            Grid.Row="0"
+            Grid.Row="1"
             ItemsSource="{Binding Assets}"
             SelectionMode="None">
             <CollectionView.ItemTemplate>
@@ -53,15 +58,6 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Button
-            Grid.Column="0"
-            Grid.Row="1"
-            Margin="8"
-            Text="Search ..."
-            Command="{Binding GetAssetsCommand}"
-            IsEnabled="{Binding IsNotBusy}"
-            Style="{StaticResource ButtonOutline}"/>
-
         <ActivityIndicator
             IsVisible="{Binding IsBusy}"
             IsRunning="{Binding IsBusy}"
@@ -69,52 +65,4 @@
             HorizontalOptions="FillAndExpand"
             Grid.RowSpan="2"/>
     </Grid>
-
-    <!--<CollectionView>
-        <CollectionView.ItemsSource>
-            <x:Array Type="{x:Type model:Asset}">
-                <model:Asset
-                    Id="1"
-                    SerialNumber="XY123"
-                    Name="Racunar"
-                    ParentAsset="10001"
-                    SAPInventoryNumber="20000001"/>
-                <model:Asset
-                    Id="2"
-                    SerialNumber="AB123"
-                    Name="Racunar neki drugi"
-                    ParentAsset="10002"
-                    SAPInventoryNumber="20000002"/>
-                <model:Asset
-                    Id="3"
-                    SerialNumber="XY123AB"
-                    Name="Lapatop"
-                    ParentAsset="10003"
-                    SAPInventoryNumber="20000003"/>
-                <model:Asset
-                    Id="4"
-                    SerialNumber="123XAB"
-                    Name="Desktop"
-                    ParentAsset="10004"
-                    SAPInventoryNumber="20000004"/>
-            </x:Array>
-        </CollectionView.ItemsSource>
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:Asset">
-                <VerticalStackLayout
-                    Padding="10"
-                    Spacing="4">
-                    <Label Text="{Binding Name}" FontSize="24"/>
-                    <Label FontSize="12">
-                        <Label.Text>
-                            <MultiBinding StringFormat="{}{0} | {1}">
-                                <Binding Path="SerialNumber"/>
-                                <Binding Path="SAPInventoryNumber"/>
-                            </MultiBinding>
-                        </Label.Text>
-                    </Label>
-                </VerticalStackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>-->
 </ContentPage>
