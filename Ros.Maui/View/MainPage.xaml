@@ -16,6 +16,9 @@
         <Entry
             Placeholder="Unesi tekst za pretragu"
             Margin="8"
+            ClearButtonVisibility="WhileEditing"
+            Keyboard="Text"
+            ReturnType="Done"
             Completed="OnSearchCompleted"/>
 
         <CollectionView

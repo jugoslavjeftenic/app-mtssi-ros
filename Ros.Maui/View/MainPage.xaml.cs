@@ -14,13 +14,20 @@ public partial class MainPage : ContentPage
 	{
 		var viewModel = BindingContext as AssetsViewModel;
 
-		if (sender is Entry entry && viewModel is not null && entry.Text?.Length > 2)
+		if (sender is Entry entry)
 		{
-			await viewModel.GetAssetsCommand.ExecuteAsync(entry.Text);
-		}
-		else
-		{
-			await DisplayAlert("Obaveštenje", "Pojam za pretragu mora da bude najmanje 3 karaktera.", "Uredu");
+			// Unfocus to close the keyboard
+			// TODO: Not working as intended, need fixing
+			entry.Unfocus();
+
+			if (viewModel is not null && entry.Text?.Length > 2)
+			{
+				await viewModel.GetAssetsCommand.ExecuteAsync(entry.Text);
+			}
+			else
+			{
+				await DisplayAlert("Obaveštenje", "Pojam za pretragu mora da bude najmanje 3 karaktera.", "Uredu");
+			}
 		}
 	}
 }
