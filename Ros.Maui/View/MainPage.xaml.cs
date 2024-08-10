@@ -20,7 +20,7 @@ public partial class MainPage : ContentPage
 		}
 		else
 		{
-			await DisplayAlert("Pažnja", "Pojam za pretragu mora da bude najmanje 3 karaktera.", "Uredu");
+			await DisplayAlert("Obaveštenje", "Pojam za pretragu mora da bude najmanje 3 karaktera.", "Uredu");
 		}
 	}
 }

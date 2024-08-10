@@ -42,14 +42,29 @@ public partial class AssetsViewModel : BaseViewModel
 		{
 			IsBusy = true;
 
-			// Fetch assets from repository ...
+			// Fetch assets from repository and clear Assets observable collection if any.
 			var assets = await _assetRepository.GetAssetsAsync(searchQuery);
-
-			// ... and clear Assets observable collection if any.
 			if (assets.Count > 0) Assets.Clear();
 
+			// Show a message if the search result is empty or exceeds the limit. 
+			// TODO: Parameterized asset.Count limit
+			if (assets.Count == 0)
+			{
+				await Shell
+					.Current
+					.DisplayAlert("Obaveštenje", "Nema rezultata pretrage.", "Uredu");
+				return;
+			}
+			else if (assets.Count >= 5)
+			{
+				await Shell
+					.Current
+					.DisplayAlert("Obaveštenje", "Prikazuje se samo prvih 5 rezultata pretrage.", "OK");
+			}
+
 			// Populate Assets observable collection with fetched assets.
-			foreach (var asset in assets) Assets.Add(asset); // TODO: AddRange
+			// TODO: AddRange
+			foreach (var asset in assets) Assets.Add(asset);
 		}
 		catch (Exception ex)
 		{
