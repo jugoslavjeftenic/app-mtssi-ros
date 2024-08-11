@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Mvvm.Input;
 using Ros.Maui.Models;
 using Ros.Maui.Repositories;
 using Ros.Maui.View;
@@ -42,9 +43,7 @@ public partial class AssetsViewModel : BaseViewModel
 		// TODO: Minimal length is magic number
 		if (searchQuery.Length < 3)
 		{
-			await Shell
-				.Current
-				.DisplayAlert("Obaveštenje", "Tekst pretrage mora da bude najmanje 3 karaktera.", "Uredu");
+			await Toast.Make("Tekst pretrage mora da bude najmanje 3 karaktera.").Show();
 			return;
 		}
 
@@ -60,16 +59,12 @@ public partial class AssetsViewModel : BaseViewModel
 			// TODO: Assets count limit is magic number
 			if (assets.Count == 0)
 			{
-				await Shell
-					.Current
-					.DisplayAlert("Obaveštenje", "Nema rezultata pretrage.", "Uredu");
+				await Toast.Make("Nema rezultata pretrage.").Show();
 				return;
 			}
 			else if (assets.Count >= 5)
 			{
-				await Shell
-					.Current
-					.DisplayAlert("Obaveštenje", "Prikazuje se samo prvih 5 rezultata pretrage.", "OK");
+				await Toast.Make("Prikazuje se samo prvih 5 rezultata pretrage.").Show();
 			}
 
 			// Populate Assets observable collection with fetched assets.
