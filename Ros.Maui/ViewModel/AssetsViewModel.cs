@@ -38,6 +38,16 @@ public partial class AssetsViewModel : BaseViewModel
 	{
 		if (IsBusy) return;
 
+		// Check if search query is less then 3 characters
+		// TODO: Minimal length is magic number
+		if (searchQuery.Length < 3)
+		{
+			await Shell
+				.Current
+				.DisplayAlert("Obaveštenje", "Tekst pretrage mora da bude najmanje 3 karaktera.", "Uredu");
+			return;
+		}
+
 		try
 		{
 			IsBusy = true;
@@ -47,7 +57,7 @@ public partial class AssetsViewModel : BaseViewModel
 			if (assets.Count > 0) Assets.Clear();
 
 			// Show a message if the search result is empty or exceeds the limit. 
-			// TODO: Parameterized asset.Count limit
+			// TODO: Assets count limit is magic number
 			if (assets.Count == 0)
 			{
 				await Shell
@@ -63,7 +73,7 @@ public partial class AssetsViewModel : BaseViewModel
 			}
 
 			// Populate Assets observable collection with fetched assets.
-			// TODO: AddRange
+			// TODO: Assets.AddRange
 			foreach (var asset in assets) Assets.Add(asset);
 		}
 		catch (Exception ex)

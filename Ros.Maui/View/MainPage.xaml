@@ -14,10 +14,10 @@
         BackgroundColor="Silver">
 
         <Entry
-            Placeholder="Unesi tekst za pretragu"
+            Placeholder="Unesite tekst za pretragu"
             Margin="8"
             ClearButtonVisibility="WhileEditing"
-            Keyboard="Text"
+            Keyboard="Plain"
             ReturnType="Done"
             Completed="OnSearchCompleted"/>
 
@@ -25,17 +25,32 @@
             Grid.Row="1"
             ItemsSource="{Binding Assets}"
             SelectionMode="None">
+
+            <CollectionView.EmptyView>
+                <StackLayout
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="Nema rezultata pretrage."/>
+                </StackLayout>
+            </CollectionView.EmptyView>
+
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Asset">
+                <DataTemplate
+                    x:DataType="model:Asset">
+
                     <Grid Padding="10">
                         <Frame
                             HeightRequest="125"
                             Style="{StaticResource CardView}">
+
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:AssetsViewModel}},Path=GoToDetailsCommand}"
                                     CommandParameter="{Binding .}"/>
                             </Frame.GestureRecognizers>
+
                             <VerticalStackLayout
                                 Padding="10"
                                 Spacing="4">

@@ -17,16 +17,12 @@ public partial class MainPage : ContentPage
 		if (sender is Entry entry)
 		{
 			// Unfocus to close the keyboard
-			// TODO: Not working as intended, need fixing
+			// TODO: Not always working as intended, needs testing
 			entry.Unfocus();
 
-			if (viewModel is not null && entry.Text?.Length > 2)
+			if (viewModel is not null)
 			{
 				await viewModel.GetAssetsCommand.ExecuteAsync(entry.Text);
-			}
-			else
-			{
-				await DisplayAlert("Obaveštenje", "Pojam za pretragu mora da bude najmanje 3 karaktera.", "Uredu");
 			}
 		}
 	}
