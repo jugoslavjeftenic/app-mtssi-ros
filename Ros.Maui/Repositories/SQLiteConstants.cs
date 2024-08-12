@@ -1,6 +1,6 @@
 ﻿namespace Ros.Maui.Repositories;
 
-class SQLiteConstants
+public class SQLiteConstants
 {
 	public const string DatabaseFilename = "RosSQLite.db3";
 	public static string DatabasePath =>
