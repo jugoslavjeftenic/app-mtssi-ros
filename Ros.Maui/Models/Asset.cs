@@ -1,7 +1,10 @@
-﻿namespace Ros.Maui.Models;
+﻿using SQLite;
+
+namespace Ros.Maui.Models;
 
 public class Asset
 {
+	[PrimaryKey, AutoIncrement]
 	public int Id { get; set; }
 	public string? ParentAsset { get; set; }
 	public string? Name { get; set; }
