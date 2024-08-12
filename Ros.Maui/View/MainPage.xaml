@@ -10,8 +10,7 @@
     <Grid
         ColumnDefinitions="*"
         RowDefinitions="Auto,*"
-        Padding="5"
-        BackgroundColor="Silver">
+        Padding="5">
 
         <Entry
             Placeholder="Unesite tekst za pretragu"
@@ -53,6 +52,7 @@
 
                             <VerticalStackLayout
                                 Padding="10"
+                                Style="{StaticResource CardView}"
                                 Spacing="4">
 
                                 <Label

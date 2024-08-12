@@ -12,20 +12,30 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            <Color x:Key="Primary">#FFC107</Color>
-            <Color x:Key="PrimaryDark">#FFA000</Color>
-            <Color x:Key="Accent">#00BCD4</Color>
+            <Color x:Key="Primary">#EB1E40</Color>
+            <Color x:Key="PrimaryDark">#1C1C1E</Color>
+            <Color x:Key="Accent">#FAFAFA</Color>
 
-            <Color x:Key="LightBackground">#FAF9F8</Color>
-            <Color x:Key="DarkBackground">Black</Color>
+            <Color x:Key="LightBackground">#FAFAFA</Color>
+            <Color x:Key="DarkBackground">#1C1C1E</Color>
 
-            <Style TargetType="Page" ApplyToDerivedTypes="True">
+            <Color x:Key="LabelText">#1C1C1E</Color>
+            <Color x:Key="LabelTextDark">#FAFAFA</Color>
+
+            <Color x:Key="CardBackground">#FAFAFA</Color>
+            <Color x:Key="CardBackgroundDark">#1C1C1E</Color>
+
+            <Style
+                TargetType="Page"
+                ApplyToDerivedTypes="True">
                 <Setter
                     Property="BackgroundColor"
-                    Value="{StaticResource LightBackground}"/>
+                    Value="{AppThemeBinding Light={StaticResource LightBackground},Dark={StaticResource DarkBackground}}"/>
             </Style>
 
-            <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
+            <!--<Style
+                TargetType="NavigationPage"
+                ApplyToDerivedTypes="True">
                 <Setter
                     Property="BackgroundColor"
                     Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"/>
@@ -35,54 +45,72 @@
                 <Setter
                     Property="BarTextColor"
                     Value="White"/>
-            </Style>
+            </Style>-->
 
-            <Style TargetType="Label" x:Key="BaseLabel">
+            <Style
+                x:Key="BaseLabel"
+                TargetType="Label">
                 <Setter
                     Property="FontFamily"
                     Value="OpenSansRegular"/>
                 <Setter
                     Property="TextColor"
-                    Value="#1F1F1F"/>
+                    Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}"/>
             </Style>
 
-            <Style TargetType="Label" x:Key="MicroLabel" BasedOn="{StaticResource BaseLabel}">
+            <Style
+                x:Key="MicroLabel"
+                TargetType="Label"
+                BasedOn="{StaticResource BaseLabel}">
                 <Setter
                     Property="FontSize"
                     Value="10"/>
             </Style>
 
-            <Style TargetType="Label" x:Key="SmallLabel" BasedOn="{StaticResource BaseLabel}">
+            <Style
+                x:Key="SmallLabel"
+                TargetType="Label"
+                BasedOn="{StaticResource BaseLabel}">
                 <Setter
                     Property="FontSize"
                     Value="12"/>
             </Style>
 
-            <Style TargetType="Label" x:Key="MediumLabel" BasedOn="{StaticResource BaseLabel}">
+            <Style
+                x:Key="MediumLabel"
+                TargetType="Label"
+                BasedOn="{StaticResource BaseLabel}">
                 <Setter
                     Property="FontSize"
                     Value="16"/>
             </Style>
 
-            <Style TargetType="Label" x:Key="LargeLabel" BasedOn="{StaticResource BaseLabel}">
+            <Style
+                x:Key="LargeLabel"
+                TargetType="Label"
+                BasedOn="{StaticResource BaseLabel}">
                 <Setter
                     Property="FontSize"
                     Value="20"/>
             </Style>
 
-            <Style TargetType="RefreshView" ApplyToDerivedTypes="True">
+            <Style
+                TargetType="RefreshView"
+                ApplyToDerivedTypes="True">
                 <Setter
                     Property="RefreshColor"
                     Value="{StaticResource Primary}"/>
             </Style>
 
-            <Style TargetType="Button" x:Key="ButtonOutline">
+            <!--<Style
+                x:Key="ButtonOutline"
+                TargetType="Button">
                 <Setter
                     Property="Background"
-                    Value="{StaticResource LightBackground}"/>
+                    Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"/>
                 <Setter
                     Property="TextColor"
-                    Value="{StaticResource Primary}"/>
+                    Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}"/>
                 <Setter
                     Property="BorderColor"
                     Value="{StaticResource Primary}"/>
@@ -95,9 +123,11 @@
                 <Setter
                     Property="CornerRadius"
                     Value="20"/>
-            </Style>
+            </Style>-->
 
-            <Style TargetType="Frame" x:Key="CardView">
+            <Style
+                x:Key="CardView"
+                TargetType="Frame">
                 <Setter
                     Property="BorderColor"
                     Value="#DDDDDD"/>
@@ -109,7 +139,7 @@
                     Value="0"/>
                 <Setter
                     Property="Background"
-                    Value="{StaticResource LightBackground}"/>
+                    Value="{AppThemeBinding Light={StaticResource CardBackground}, Dark={StaticResource CardBackgroundDark}}"/>
                 <Setter
                     Property="CornerRadius"
                     Value="10"/>

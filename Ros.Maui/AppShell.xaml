@@ -9,7 +9,9 @@
 
     <Shell.Resources>
         <ResourceDictionary>
-            <Style TargetType="Element" x:Key="BaseStyle">
+            <Style
+                x:Key="BaseStyle"
+                TargetType="Element">
                 <Setter
                     Property="Shell.BackgroundColor"
                     Value="{StaticResource Primary}"/>
