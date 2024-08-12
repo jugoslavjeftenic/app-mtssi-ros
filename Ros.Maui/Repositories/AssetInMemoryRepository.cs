@@ -11,7 +11,8 @@ public class AssetInMemoryRepository : IAssetRepository
 			SerialNumber = "XY123",
 			Name = "Računar",
 			ParentAsset = "10001",
-			SAPInventoryNumber = "20000001"
+			SAPInventoryNumber = "20000001",
+			Category = "DESK",
 		},
 		new Asset
 		{
@@ -19,7 +20,8 @@ public class AssetInMemoryRepository : IAssetRepository
 			SerialNumber = "AB123",
 			Name = "Računar neki drugi",
 			ParentAsset = "10002",
-			SAPInventoryNumber = "20000002"
+			SAPInventoryNumber = "20000002",
+			Category = "DESK",
 		},
 		new Asset
 		{
@@ -27,7 +29,8 @@ public class AssetInMemoryRepository : IAssetRepository
 			SerialNumber = "XY123AB",
 			Name = "Lapatop",
 			ParentAsset = "10003",
-			SAPInventoryNumber = "20000003"
+			SAPInventoryNumber = "20000003",
+			Category = "DESK",
 		},
 		new Asset
 		{
@@ -35,7 +38,8 @@ public class AssetInMemoryRepository : IAssetRepository
 			SerialNumber = "123XAB",
 			Name = "Desktop",
 			ParentAsset = "10004",
-			SAPInventoryNumber = "20000004"
+			SAPInventoryNumber = "20000004",
+			Category = "DESK",
 		},
 		new Asset
 		{
@@ -43,7 +47,8 @@ public class AssetInMemoryRepository : IAssetRepository
 			SerialNumber = "DE456",
 			Name = "Monitor",
 			ParentAsset = "10005",
-			SAPInventoryNumber = "20000005"
+			SAPInventoryNumber = "20000005",
+			Category = "DESK",
 		},
 		new Asset
 		{
@@ -51,7 +56,8 @@ public class AssetInMemoryRepository : IAssetRepository
 			SerialNumber = "FG789",
 			Name = "Printer",
 			ParentAsset = "10006",
-			SAPInventoryNumber = "20000006"
+			SAPInventoryNumber = "20000006",
+			Category = "DESK",
 		},
 		new Asset
 		{
@@ -59,7 +65,8 @@ public class AssetInMemoryRepository : IAssetRepository
 			SerialNumber = "HI012",
 			Name = "Skener",
 			ParentAsset = "10007",
-			SAPInventoryNumber = "20000007"
+			SAPInventoryNumber = "20000007",
+			Category = "DESK",
 		},
 		new Asset
 		{
@@ -67,7 +74,8 @@ public class AssetInMemoryRepository : IAssetRepository
 			SerialNumber = "JK345",
 			Name = "Server",
 			ParentAsset = "10008",
-			SAPInventoryNumber = "20000008"
+			SAPInventoryNumber = "20000008",
+			Category = "DESK",
 		},
 		new Asset
 		{
@@ -75,7 +83,8 @@ public class AssetInMemoryRepository : IAssetRepository
 			SerialNumber = "LM678",
 			Name = "Projektor",
 			ParentAsset = "10009",
-			SAPInventoryNumber = "20000009"
+			SAPInventoryNumber = "20000009",
+			Category = "DESK",
 		},
 		new Asset
 		{
@@ -83,7 +92,8 @@ public class AssetInMemoryRepository : IAssetRepository
 			SerialNumber = "NO901",
 			Name = "Tablet",
 			ParentAsset = "10010",
-			SAPInventoryNumber = "20000010"
+			SAPInventoryNumber = "20000010",
+			Category = "DESK",
 		}
 	];
 
