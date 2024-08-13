@@ -6,7 +6,7 @@ namespace Ros.Maui.Repositories;
 public class AssetSQLiteRepository : IAssetRepository
 {
 	private readonly SQLiteAsyncConnection _db;
-	private int _rowLimit = 10;
+	private readonly int _rowLimit = 10;
 
 	public AssetSQLiteRepository()
 	{
