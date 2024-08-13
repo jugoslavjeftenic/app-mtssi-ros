@@ -23,17 +23,14 @@ public class AssetSQLiteRepository : IAssetRepository
 
 		return await _db.Table<Asset>()
 			.Where(x =>
-				x.ParentAsset.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-				x.Name.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-				x.Category.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-				x.SAPInventoryNumber.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-				x.FirstName.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-				x.LastName.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-				x.Username.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-				x.SerialNumber.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-				x.LocationDescription.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-				x.LowestOrganizationalUnit.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-				x.JobTitle.Contains(filter, StringComparison.OrdinalIgnoreCase))
+				x.ParentAsset.Contains(filter) ||
+				x.Name.Contains(filter) ||
+				x.SAPInventoryNumber.Contains(filter) ||
+				x.FirstName.Contains(filter) ||
+				x.LastName.Contains(filter) ||
+				x.Username.Contains(filter) ||
+				x.SerialNumber.Contains(filter) ||
+				x.LocationDescription.Contains(filter))
 			.Take(_rowLimit)
 			.ToListAsync();
 	}
