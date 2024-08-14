@@ -31,10 +31,12 @@ public static class MauiProgram
 		// ViewModel
 		builder.Services.AddSingleton<AssetsViewModel>();
 		builder.Services.AddTransient<AssetDetailsViewModel>();
+		builder.Services.AddTransient<SettingsViewModel>();
 
 		// View
 		builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddTransient<DetailsPage>();
+		builder.Services.AddTransient<SettingsPage>();
 
 		return builder.Build();
 	}

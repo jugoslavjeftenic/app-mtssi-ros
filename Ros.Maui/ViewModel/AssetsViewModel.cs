@@ -21,6 +21,14 @@ public partial class AssetsViewModel : BaseViewModel
 	}
 
 	[RelayCommand]
+	public async Task GoToSettingsAsync()
+	{
+		await Shell
+			.Current
+			.GoToAsync($"{nameof(SettingsPage)}", true);
+	}
+
+	[RelayCommand]
 	public async Task GoToDetailsAsync(Asset asset)
 	{
 		if (asset is null) return;
