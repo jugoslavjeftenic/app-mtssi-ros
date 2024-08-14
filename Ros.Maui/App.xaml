@@ -33,20 +33,6 @@
                     Value="{AppThemeBinding Light={StaticResource LightBackground},Dark={StaticResource DarkBackground}}"/>
             </Style>
 
-            <!--<Style
-                TargetType="NavigationPage"
-                ApplyToDerivedTypes="True">
-                <Setter
-                    Property="BackgroundColor"
-                    Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"/>
-                <Setter
-                    Property="BarBackgroundColor"
-                    Value="{StaticResource Primary}"/>
-                <Setter
-                    Property="BarTextColor"
-                    Value="White"/>
-            </Style>-->
-
             <Style
                 x:Key="BaseLabel"
                 TargetType="Label">
@@ -101,29 +87,6 @@
                     Property="RefreshColor"
                     Value="{StaticResource Primary}"/>
             </Style>
-
-            <!--<Style
-                x:Key="ButtonOutline"
-                TargetType="Button">
-                <Setter
-                    Property="Background"
-                    Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"/>
-                <Setter
-                    Property="TextColor"
-                    Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}"/>
-                <Setter
-                    Property="BorderColor"
-                    Value="{StaticResource Primary}"/>
-                <Setter
-                    Property="BorderWidth"
-                    Value="2"/>
-                <Setter
-                    Property="HeightRequest"
-                    Value="40"/>
-                <Setter
-                    Property="CornerRadius"
-                    Value="20"/>
-            </Style>-->
 
             <Style
                 x:Key="CardView"
