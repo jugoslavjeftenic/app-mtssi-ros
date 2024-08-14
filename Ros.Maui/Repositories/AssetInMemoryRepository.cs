@@ -97,6 +97,11 @@ public class AssetInMemoryRepository : IAssetRepository
 		}
 	];
 
+	public Task DropAndRecreateTableAsync()
+	{
+		throw new NotImplementedException();
+	}
+
 	public async Task<List<Asset>> GetAssetsAsync(string filter)
 	{
 		var assets = _assets.AsEnumerable();

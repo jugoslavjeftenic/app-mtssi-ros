@@ -5,4 +5,5 @@ namespace Ros.Maui.Repositories;
 public interface IAssetRepository
 {
 	Task<List<Asset>> GetAssetsAsync(string filter);
+	Task DropAndRecreateTableAsync();
 }

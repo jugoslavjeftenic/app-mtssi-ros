@@ -16,7 +16,7 @@ public partial class AssetsViewModel : BaseViewModel
 
 	public AssetsViewModel(IAssetRepository assetRepository)
 	{
-		Title = "Registar osnovnih sredstava";
+		Title = "ROS";
 		_assetRepository = assetRepository;
 	}
 
@@ -49,7 +49,7 @@ public partial class AssetsViewModel : BaseViewModel
 
 		// Check if search query is less then 3 characters
 		// TODO: Minimal length is magic number
-		if (searchQuery.Length < 3)
+		if (searchQuery is null || searchQuery.Length < 3)
 		{
 			await Toast.Make("Tekst pretrage mora da bude najmanje 3 karaktera.").Show();
 			return;

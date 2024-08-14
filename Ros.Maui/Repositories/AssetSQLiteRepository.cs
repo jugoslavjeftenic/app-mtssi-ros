@@ -34,4 +34,10 @@ public class AssetSQLiteRepository : IAssetRepository
 			.Take(_rowLimit)
 			.ToListAsync();
 	}
+
+	public async Task DropAndRecreateTableAsync()
+	{
+		await _db.DropTableAsync<Asset>();
+		await _db.CreateTableAsync<Asset>();
+	}
 }
