@@ -89,6 +89,28 @@
             </Style>
 
             <Style
+                x:Key="ButtonOutline"
+                TargetType="Button">
+                <Setter
+                    Property="Background"
+                    Value="{AppThemeBinding Light={StaticResource LightBackground},Dark={StaticResource DarkBackground}}" />
+                <Setter
+                    Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}" />
+                <Setter
+                    Property="BorderColor" Value="{StaticResource Primary}" />
+                <Setter
+                    Property="BorderWidth"
+                    Value="2" />
+                <Setter
+                    Property="HeightRequest"
+                    Value="40" />
+                <Setter
+                    Property="CornerRadius"
+                    Value="20" />
+            </Style>
+
+            <Style
                 x:Key="CardView"
                 TargetType="Frame">
                 <Setter
